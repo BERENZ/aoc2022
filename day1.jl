@@ -1,6 +1,4 @@
-## packages
-using Pkg
-Pkg.activate(".")
+
 
 ## solution 1 
 fname = "data/input1.txt"
