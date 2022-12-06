@@ -76,8 +76,10 @@ stacks  = [
 for e in eachslice(moves, dims = 1)
     ## how many
     from_len = length(stacks[e[2]])
+    #push!(stacks[e[3]], splice!(stacks[e[2]], (from_len-e[1]+1):from_len)...)
     append!(stacks[e[3]], splice!(stacks[e[2]], (from_len-e[1]+1):from_len))
 end
 
 result_part2 = join([s[end] for s in stacks])
+
 
