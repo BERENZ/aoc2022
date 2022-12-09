@@ -176,6 +176,15 @@ for h2 in all_keys_2
     end
 end
 
-sum(i for i in values(res) if i <= 100000 )
+sum(i for i in values(res) if i <= 100000 ) ## 1543140
 
-
+## part 2
+## total space
+total_space = 70000000
+min_space = 30000000
+main_dir = filter(x -> length(x) == 1, collect(keys(res)))
+## directories (should be 1117448)
+current_space = 23804 + 24936 + 178747  + sum(sums)
+space_left  = total_space - current_space
+space_required = min_space - space_left
+minimum([res[i] for i in all_keys if res[i] >= space_required])
